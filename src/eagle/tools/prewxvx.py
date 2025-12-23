@@ -27,7 +27,7 @@ def main(config):
 
     open_kwargs = {
         "load": True,
-        "reshape_cell_to_2d": model_type != "nested-global",
+        "reshape_cell_to_2d": config.get("reshape_cell_to_2d", False),
         "levels": config.get("levels", None),
         "vars_of_interest": config.get("vars_of_interest", None),
         "member": config.get("member", None),
